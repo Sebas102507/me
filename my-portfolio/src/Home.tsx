@@ -1,7 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 // IMPORTANT: For the new design, please use a profile image with a transparent background (PNG format).
 import meImg from './assets/other/compound_interest.png'
-import signatureImg from './assets/me/signature.png'
 import profileImg from './assets/me/profile_picture.png'
 
 const CONTACT = {
@@ -265,7 +264,7 @@ const Header = () => {
       <div className="header-inner" ref={navRef}>
         <div className="brand">
           <button className="brand-button" onClick={() => setOpen(!open)} aria-haspopup="menu" aria-expanded={open} aria-label="Open contact menu">
-            <img src={signatureImg} alt="Sebastian Vargas signature" className="brand-logo" />
+            <span className="brand-mark" aria-hidden="true">JSVT</span>
           </button>
           {open && (
             <div className="brand-menu" role="menu">
@@ -501,6 +500,17 @@ a:hover { opacity: 0.8; }
 .site-header { position: fixed; top: 0; left: 0; right: 0; z-index: 20; padding: var(--spacing-md) 0; background-color: var(--color-dark-bg); border-bottom: 1px solid rgba(255,255,255,0.08); }
 .header-inner { max-width: 1024px; margin: 0 auto; padding: 0 var(--spacing-lg); display: flex; justify-content: space-between; align-items: center; }
 .brand-logo { height: 88px; display: block; transform: rotate(-6deg); filter: invert(1) brightness(1.5); }
+.brand-mark { 
+  display: inline-block; 
+  transform: none;
+  font-family: 'Libre Baskerville', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 1;
+  color: var(--color-text-dark);
+  letter-spacing: 1px;
+}
 .brand-button { background: transparent; border: none; padding: 0; cursor: pointer; }
 .brand { position: relative; display: flex; align-items: center; }
 .brand-menu { position: absolute; top: 100%; left: 0; background: var(--color-surface); color: var(--color-text-light); border: 1px solid var(--color-border); border-radius: 8px; padding: 8px; box-shadow: 0 8px 20px rgba(0,0,0,0.15); display: grid; gap: 6px; min-width: 160px; z-index: 20; }
@@ -527,7 +537,7 @@ a:hover { opacity: 0.8; }
 .nav-contact { position: relative; }
 .nav-toggle { display: none; background: none; border: 1px solid var(--color-border); color: var(--color-text-dark); border-radius: 8px; padding: 6px 10px; cursor: pointer; }
 
-main { padding-top: 120px; }
+main { padding-top: 0; }
 
 /* 4. Hero Section */
  .hero { 
@@ -1106,6 +1116,7 @@ function Home() {
                   <ul className="edu-list">
                     <li className="edu-item">Systems Engineering — Pontificia Universidad Javeriana 🇨🇴</li>
                     <li className="edu-item">Master of Data Science and Innovation — University of Technology Sydney 🇦🇺</li>
+                    <li className="edu-item">IELTS Academic — C1 level 🇬🇧</li>
                   </ul>
                 </div>
               </div>
