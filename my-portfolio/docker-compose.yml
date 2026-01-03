@@ -1,0 +1,31 @@
+services:
+  web:
+    build:
+      context: .
+      target: dev
+    ports:
+      - "5173:5173"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+      - VITE_GITHUB_USERNAME=${VITE_GITHUB_USERNAME}
+    command: npm run dev
+
+  # Optional: serve the production build
+  preview:
+    build:
+      context: .
+      target: preview
+      args:
+        - VITE_GITHUB_USERNAME=${VITE_GITHUB_USERNAME}
+    ports:
+      - "4173:4173"
+    environment:
+      - NODE_ENV=production
+      - VITE_GITHUB_USERNAME=${VITE_GITHUB_USERNAME}
+    depends_on:
+      - web
+    profiles:
+      - preview
