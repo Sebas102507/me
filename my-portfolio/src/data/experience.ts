@@ -19,7 +19,7 @@ export const WORK: ExperienceItem[] = [
   {
     organisation: 'University of Technology Sydney',
     client: 'Advancement and Alumni Unit',
-    role: 'Data Analyst',
+    role: 'Data Analyst Consultant',
     start: 'Sep 2025',
     end: 'Present',
     location: 'Sydney, Australia',
