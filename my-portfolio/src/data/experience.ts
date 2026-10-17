@@ -39,8 +39,8 @@ export const WORK: ExperienceItem[] = [
     tools: ['Microsoft Fabric', 'Power BI', 'SQL Server', 'Blackbaud Raiser’s Edge NXT', 'Live Alumni', 'Python', 'Apache Airflow'],
   },
   {
-    organisation: 'Wizeline',
-    client: 'Nike',
+    organisation: 'Nike',
+    client: 'via Wizeline',
     role: 'Data Engineer III',
     start: 'Dec 2024',
     end: 'Jun 2025',
@@ -48,10 +48,11 @@ export const WORK: ExperienceItem[] = [
     logoKeys: ['nike', 'wizeline'],
     goal: 'Modernise the pipelines behind Nike’s global workplace data and open them up for self-service analytics.',
     challenge:
-      'Core pipelines still ran on Apache Airflow inside a fourteen-member team, seven global domains had to keep flowing during the change, and Databricks costs were climbing.',
+      'Core pipelines still ran on Apache Airflow inside a fourteen-member, multicultural team spread between Guadalajara, Mexico City and Nike\u2019s Oregon headquarters. Seven global domains had to keep flowing during the change, and Databricks costs were climbing.',
     outcome:
       'Core DAGs moved to Databricks Workflows, a medallion model on Delta Lake with governance through Unity Catalog and Collibra enabled self-service analytics for Data Science and HR, and monthly pipeline costs fell by 30%.',
     details: [
+      'Worked daily with a multicultural team: engineers in Guadalajara and Mexico City, and Nike\u2019s data and product teams in Beaverton, Oregon.',
       'Oversaw and mentored three Level 2 data engineers while orchestrating the Airflow to Databricks Workflows migration.',
       'Engineered and maintained seven core pipelines ingesting global data for locations, employees, leasing, building access and IoT sensor-based headcounts.',
       'Partnered with analysts and product managers in agile sprints, translated business needs into technical specifications and presented on demo days.',
@@ -60,17 +61,19 @@ export const WORK: ExperienceItem[] = [
     tools: ['Databricks', 'Delta Lake', 'Unity Catalog', 'Collibra', 'Apache Airflow', 'Apache Spark', 'Python', 'SQL'],
   },
   {
-    organisation: 'Groupe SII',
-    client: 'Amadeus',
+    organisation: 'Amadeus',
+    client: 'via Groupe SII',
     role: 'Semi-senior Data Engineer',
     start: 'Apr 2024',
     end: 'Dec 2024',
     location: 'Bogotá, Colombia · remote',
     logoKeys: ['amadeus', 'sii'],
     goal: 'Move Amadeus’s petabyte-scale analytics for airline, reservation and hospitality partners, including Hilton and Marriott, from a legacy on-premises platform to Azure.',
-    challenge: 'Critical jobs took three days to run, the business could not tolerate downtime, and the migration had to prove the cloud results matched the old system exactly.',
+    challenge:
+      'Critical jobs took three days to run, the business could not tolerate downtime, and the migration had to prove the cloud results matched the old system exactly, all coordinated with Amadeus\u2019s Atlanta team and colleagues in France, India and Canada.',
     outcome: 'A phased migration with cloud and on-premises systems running in parallel delivered zero downtime and over 400× faster processing: from three days to under ten minutes.',
     details: [
+      'Worked with Amadeus\u2019s Atlanta-based team and colleagues from France, India and Canada across time zones.',
       'Led two engineers within a ten-person team through the migration to an Azure and Databricks environment.',
       'Redesigned and deployed the pipelines for petabyte-scale partner data.',
       'Ran cloud and on-premises in parallel to guarantee data consistency before cutover.',

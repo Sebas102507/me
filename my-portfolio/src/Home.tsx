@@ -14,7 +14,6 @@ import { Section, SubHead, TwoCol } from './components/Section';
 import { emph } from './lib/emph';
 import { Story } from './components/Story';
 import { Hero, LogoStrip, Skills } from './components/TitleBlock';
-import { LinkedInBanner } from './components/Banner';
 
 const NAV: NavItem[] = [
   { id: 'story', label: 'Story' },
@@ -176,7 +175,6 @@ export default function Home() {
         </Section>
 
         <ContactCta />
-        <LinkedInBanner />
       </main>
 
       <Footer />
