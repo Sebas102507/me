@@ -10,6 +10,8 @@ import foodSamples from '../assets/projects/food_samples.jpg';
 import airbnbArch from '../assets/projects/airbnb_architecture.jpg';
 import nycTaxiArch from '../assets/projects/nyctaxi_architecture.jpg';
 import youtubeArch from '../assets/projects/youtube_architecture.jpg';
+import weatherPreds from '../assets/projects/weather_cci_predictions.jpg';
+import bulletsSim from '../assets/projects/bullets_simulator.jpg';
 
 export type ProjectLink = { label: string; url: string; kind?: 'repo' | 'live' | 'doc' | 'package' | 'org' | 'video' };
 
@@ -127,14 +129,17 @@ export const PROJECT_GROUPS: ProjectGroup[] = [
       {
         id: 'bullets',
         title: 'Bullets Over Hugs: The Cost of the Global Arms Race',
-        venue: 'Data visualisation project · organisation Data-Visualization-Bullets-Over-Hugs',
+        venue: 'Data visualisation project',
         year: '2026',
         topic: 'Defence & policy',
         summary:
-          'Interactive multi-page Streamlit dashboard quantifying military spending, the human cost of conflict and the scale of nuclear arsenals: an opportunity-cost re-allocation tool, a conflict fatalities map, a destructive-scale visualisation and a localised nuclear impact simulator, built on SIPRI, Our World in Data, FAS and NUKEMAP sources.',
+          'I built this because the nuclear threat worries me and most people never see its scale. The dashboard quantifies military spending, the human cost of conflict and the size of today\u2019s arsenals so the numbers become impossible to ignore: an opportunity-cost tool that re-allocates defence budgets to schools, water and healthcare, a conflict fatalities map, a destructive-scale visualisation and a localised nuclear impact simulator you can point at your own city. Built with Streamlit and Plotly on SIPRI, Our World in Data, FAS and NUKEMAP sources.',
         stack: ['Streamlit', 'Plotly', 'pandas', 'NumPy'],
-        links: [{ label: 'Repository', url: 'https://github.com/Data-Visualization-Bullets-Over-Hugs/Bullets-Over-Hugs', kind: 'repo' }],
-        brand: { bg: 'radial-gradient(circle at top, #08152f 0%, #050b18 55%, #040812 100%)', fg: '#edf2f4', accent: '#ef233c', muted: 'rgba(237,242,244,0.7)', wordmark: 'Bullets Over Hugs' },
+        links: [
+          { label: 'Live dashboard', url: 'https://bullets-over-hugs-xywe6yyf72amtjipl9zbwx.streamlit.app', kind: 'live' },
+          { label: 'Repository', url: 'https://github.com/Data-Visualization-Bullets-Over-Hugs/Bullets-Over-Hugs', kind: 'repo' },
+        ],
+        brand: { bg: 'radial-gradient(circle at top, #08152f 0%, #050b18 55%, #040812 100%)', fg: '#edf2f4', accent: '#ef233c', muted: 'rgba(237,242,244,0.7)', wordmark: 'Bullets Over Hugs', image: bulletsSim, imageAlt: 'Localized Impact Simulator for Sydney in the Bullets Over Hugs dashboard', imageFit: 'contain' },
       },
       {
         id: 'xray',
@@ -182,11 +187,11 @@ export const PROJECT_GROUPS: ProjectGroup[] = [
       {
         id: 'music',
         title: 'Music Genre Classifier',
-        venue: 'Independent study, with Alejandro Morales',
+        venue: 'Machine Learning course, Master in Artificial Intelligence · Pontificia Universidad Javeriana · with Alejandro Morales',
         year: '2023',
         topic: 'Audio & music',
         summary:
-          'Drop a 30-second clip and get its genre. MFCC features feed a neural network trained on the GTZAN dataset (ten genres). React front end, FastAPI API with Celery workers, RabbitMQ, MongoDB and Google Cloud Storage for the audio.',
+          'Built for the Machine Learning course of the Master in Artificial Intelligence at Pontificia Universidad Javeriana. Drop a 30-second clip and get its genre: MFCC features feed a neural network trained on the GTZAN dataset (ten genres). React front end, FastAPI API with Celery workers, RabbitMQ, MongoDB and Google Cloud Storage for the audio.',
         stack: ['MFCC', 'scikit-learn', 'FastAPI', 'Celery', 'React', 'MongoDB'],
         links: [{ label: 'Repository', url: 'https://github.com/Sebas102507/music_gender_app_classifier_with_NN', kind: 'repo' }],
         brand: { bg: '#242424', fg: '#ffffff', accent: '#646cff', accent2: '#00cc69', muted: 'rgba(255,255,255,0.65)', wordmark: 'Music Genre Classifier', image: musicApp, imageAlt: 'Music Genre Classifier upload screen', imageFit: 'cover' },
@@ -226,6 +231,28 @@ export const PROJECT_GROUPS: ProjectGroup[] = [
         stack: ['Snowflake', 'Azure Blob Storage', 'SQL', 'Plotly'],
         links: [{ label: 'Repository', url: 'https://github.com/Sebas102507/youtube-trending-snowflake-lakehouse', kind: 'repo' }],
         brand: { bg: '#eaf6fd', fg: '#0b2a3a', accent: '#29b5e8', accent2: '#0078d4', muted: '#4a6675', wordmark: 'Snowflake · Azure', image: youtubeArch, imageAlt: 'YouTube trending lakehouse architecture', imageFit: 'contain' },
+      },
+      {
+        id: 'weather',
+        title: 'Weather Intelligence: ML as a Service for Sydney',
+        venue: 'End-to-end machine learning project · experiments, package, API',
+        year: '2025',
+        topic: 'Weather & climate',
+        summary:
+          'Two forecasting services trained on 26 years of hourly Open-Meteo observations and deployed as a public FastAPI on Render: a Climate Comfort Index regressor for the next three days and a Weather Hazard classifier seven days ahead. Ten experiments tuned with Optuna under walk-forward cross-validation, a leakage-audited feature pipeline shared by training and serving through the nucleus-ml package, drift monitoring, and an automated promotion of champions into the API. The comfort model cuts next-day error by 12% against the best naive forecast.',
+        contributions: [
+          'Walk-forward CV over 2021 to 2024 with horizon-length embargoes; the 2025 test year scored exactly once.',
+          'Five algorithms per target, from dummy baselines to random forest, XGBoost and MLP, with feature-family ablation.',
+          'Same fitted preprocessing pipeline pickled from nucleus-ml and loaded by the API, so served features match training.',
+        ],
+        stack: ['scikit-learn', 'XGBoost', 'Optuna', 'FastAPI', 'Docker', 'Render', 'uv'],
+        links: [
+          { label: 'Live API docs', url: 'https://three6120-26sp-at2-25945320-api.onrender.com/docs', kind: 'live' },
+          { label: 'Experiments', url: 'https://github.com/Sebas102507/36120-26SP-AT2-25945320-experiments', kind: 'repo' },
+          { label: 'API', url: 'https://github.com/Sebas102507/36120-26SP-AT2-25945320-api', kind: 'repo' },
+          { label: 'nucleus-ml on TestPyPI', url: 'https://test.pypi.org/project/nucleus-ml/', kind: 'package' },
+        ],
+        brand: { bg: '#eef5fb', fg: '#0f2a44', accent: '#1f77b4', accent2: '#ff7f0e', muted: '#4b6378', wordmark: 'Weather Intelligence', image: weatherPreds, imageAlt: 'Random forest out-of-fold predictions of the Climate Comfort Index', imageFit: 'contain' },
       },
 
 
@@ -291,20 +318,6 @@ export const PROJECT_GROUPS: ProjectGroup[] = [
           'Cleaning, exploring and testing hypotheses on the FIFA players dataset: parsing values and wages, picking a preferred position per player, correlations between age, rating and value, wage comparisons across clubs, and three hypotheses checked with a hand-written gradient-descent linear regression.',
         stack: ['pandas', 'seaborn', 'NumPy', 'pandas-profiling'],
         links: [{ label: 'Repository', url: 'https://github.com/Sebas102507/fifaDataExploration', kind: 'repo' }],
-      },
-      {
-        id: 'weather',
-        title: 'Weather Intelligence: Forecasting Service for Sydney',
-        venue: 'Advanced machine learning project',
-        year: '2026',
-        topic: 'Weather',
-        summary:
-          'FastAPI service that serves two models trained on the Open-Meteo historical archive: a regression model for a Climate Comfort Index at one-, two- and three-day horizons and a multiclass Weather Hazard Category at seven days. Experiments use walk-forward cross-validation through the nucleus-ml package. Deployed on Render with Docker.',
-        stack: ['scikit-learn', 'Optuna', 'FastAPI', 'Docker', 'uv', 'Render'],
-        links: [
-          { label: 'Live API documentation', url: 'https://three6120-26sp-at2-25945320-api.onrender.com/docs', kind: 'live' },
-          { label: 'nucleus-ml on TestPyPI', url: 'https://test.pypi.org/project/nucleus-ml/', kind: 'package' },
-        ],
       },
       {
         id: 'parliament',
