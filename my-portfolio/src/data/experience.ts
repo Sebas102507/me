@@ -136,12 +136,13 @@ export const WORK: ExperienceItem[] = [
   },
   {
     organisation: 'Jesuit Refugee Service Colombia',
+    client: 'Javeriana scholarship project',
     role: 'Data Scientist (internship)',
     start: 'Jan 2020',
     end: 'Jul 2022',
     location: 'Bogotá, Colombia · remote',
-    logoKeys: ['jrs'],
-    goal: 'Make every donated dollar go as far as possible in refugee camps.',
+    logoKeys: ['jrs', 'javeriana'],
+    goal: 'Make every donated dollar go as far as possible in refugee camps. I joined through the scholarship I received from Pontificia Universidad Javeriana, which placed me on this social-impact project.',
     challenge: 'Resource use was hard to predict, vulnerable groups were hard to identify in time, and funding from donors like GIZ, the European Union, the Foreign Ministry and PRM could run out before anyone noticed.',
     outcome: 'Linear models allocate donor funds where they do the most good, forecasts anticipate shortfalls early enough to reach out to donors, and classification models flag populations at risk.',
     details: [

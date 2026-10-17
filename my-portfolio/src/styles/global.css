@@ -2174,3 +2174,235 @@ code {
   border-radius: 10px;
   object-fit: cover;
 }
+
+/* ------------------------------------------------------------------
+   Branded project cards. Colours come from each project via --pb/--pf/--pa.
+   ------------------------------------------------------------------ */
+.brand-grid {
+  display: grid;
+  gap: 16px;
+}
+.brand-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 24px;
+  background: var(--pb);
+  color: var(--pf);
+  border-radius: var(--r-lg);
+  padding: 28px;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.brand-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+@media (min-width: 900px) {
+  .brand-card.has-media {
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+    gap: 32px;
+    padding: 32px;
+  }
+}
+.brand-body {
+  display: grid;
+  gap: 14px;
+  align-content: start;
+  min-width: 0;
+}
+.brand-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px 16px;
+}
+.brand-id {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+.brand-logo {
+  width: auto;
+  max-width: 220px;
+  object-fit: contain;
+}
+.brand-wordmark {
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--pf);
+}
+.brand-meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.brand-flag {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--pa);
+  color: var(--pf);
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.brand-flag::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--pa);
+}
+.brand-year {
+  font-size: 0.78rem;
+  color: var(--pm);
+}
+.brand-title {
+  font-size: clamp(1.4rem, 2.4vw, 1.9rem);
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  color: var(--pf);
+}
+.brand-venue {
+  font-size: 0.85rem;
+  color: var(--pm);
+  margin-top: -8px;
+}
+.brand-summary {
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--pm);
+}
+.brand-contrib {
+  display: grid;
+  gap: 6px;
+  font-size: 0.88rem;
+  color: var(--pm);
+}
+.brand-contrib li {
+  position: relative;
+  padding-left: 16px;
+}
+.brand-contrib li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--pa);
+}
+.brand-chips .chip {
+  background: color-mix(in srgb, var(--pf) 7%, transparent);
+  border: 1px solid color-mix(in srgb, var(--pf) 14%, transparent);
+  color: var(--pf);
+}
+.brand-card .proj-links a {
+  background: var(--pa);
+  border-color: var(--pa);
+  color: var(--pl);
+}
+.brand-card .proj-links a:hover {
+  background: var(--pf);
+  border-color: var(--pf);
+  color: var(--pb);
+}
+.brand-card .proj-links a + a {
+  background: transparent;
+  color: var(--pf);
+  border-color: color-mix(in srgb, var(--pf) 28%, transparent);
+}
+.brand-card .proj-links a + a:hover {
+  background: var(--pf);
+  color: var(--pb);
+}
+.brand-repos summary {
+  cursor: pointer;
+  list-style: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.84rem;
+  font-weight: 500;
+  color: var(--pf);
+  user-select: none;
+}
+.brand-repos summary::-webkit-details-marker {
+  display: none;
+}
+.brand-repos summary::after {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(45deg);
+  margin-top: -3px;
+  transition: transform 0.15s ease;
+}
+.brand-repos[open] summary::after {
+  transform: rotate(-135deg);
+  margin-top: 3px;
+}
+.brand-repos .repo-list {
+  margin-top: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+}
+.brand-repos .repo-list a {
+  background: color-mix(in srgb, var(--pf) 7%, transparent);
+}
+.brand-repos .repo-list a:hover {
+  background: color-mix(in srgb, var(--pf) 14%, transparent);
+}
+.brand-repos .repo-list .name {
+  color: var(--pf);
+}
+.brand-repos .repo-list .desc {
+  color: var(--pm);
+}
+.brand-media {
+  position: relative;
+  border-radius: var(--r);
+  overflow: hidden;
+  min-height: 220px;
+  background: color-mix(in srgb, var(--pf) 6%, transparent);
+  align-self: stretch;
+  display: grid;
+  place-items: center;
+}
+.brand-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.brand-media.fit-contain {
+  background: transparent;
+  padding: 8px;
+}
+.brand-media.fit-contain img {
+  object-fit: contain;
+  max-height: 340px;
+}
+@media (max-width: 600px) {
+  .brand-card {
+    padding: 20px;
+    border-radius: var(--r);
+  }
+  .brand-media {
+    min-height: 180px;
+  }
+  .brand-logo {
+    max-width: 160px;
+  }
+}

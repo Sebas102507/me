@@ -124,7 +124,7 @@ export default function Home() {
           id="projects"
           eyebrow="Projects and packages"
           title="Things I *built*, with the code to prove it."
-          intro="Filter by what you care about. Every entry links to a public repository and, where it exists, a live deployment."
+          intro="Top projects first, each in its own colours, then the long tail. Every entry links to a public repository and, where it exists, a live deployment."
         >
           <ProjectGroups groups={PROJECT_GROUPS} />
           <SubHead title="Packages other people can *install*" count={PACKAGES.length} />

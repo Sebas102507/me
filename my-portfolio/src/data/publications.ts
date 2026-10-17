@@ -32,15 +32,4 @@ export const PUBLICATIONS: Publication[] = [
     url: 'https://medium.com/@libros123bmw/deploy-a-llm-on-aws-using-langchain-and-docker-ff9ba7a9e7e0',
     kind: 'article',
   },
-  {
-    authors: 'Vargas T., J. and the uts-ilab-p08 team',
-    year: '2026',
-    title: 'Is BLIP image captioning good enough to power natural-language search over CCTV footage?',
-    venue: 'Technical report, UTS iLab',
-    date: '2026',
-    summary:
-      'Across 200 frames from four surveillance cameras BLIP produced only 17 distinct captions and never described any of the 11 ground-truth activities, which ruled out off-the-shelf captioning for the capstone architecture.',
-    url: 'https://github.com/uts-ilab-p08/blip-captioning-poc/blob/main/REPORT.md',
-    kind: 'report',
-  },
 ];

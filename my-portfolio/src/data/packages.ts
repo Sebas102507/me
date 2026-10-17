@@ -16,7 +16,7 @@ export const PACKAGES: Package[] = [
     summary:
       'Turns surveillance video into structured event annotations: a vision-language window filter, YOLO tracking and a VLM annotator. Integrations are optional extras, so nothing heavy is imported at install time.',
     install: 'pip install -i https://test.pypi.org/simple/ videometa',
-    authors: 'with the uts-ilab-p08 team',
+    authors: 'with the Horus team',
     links: [
       { label: 'TestPyPI', url: 'https://test.pypi.org/project/videometa/' },
       { label: 'Repository', url: 'https://github.com/uts-ilab-p08/videometa' },

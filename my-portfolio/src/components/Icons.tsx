@@ -107,3 +107,9 @@ export const IconClose = (p: P) => (
     <path d="M6 6l12 12M18 6L6 18" />
   </svg>
 );
+
+export const IconPlay = (p: P) => (
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" {...p}>
+    <path d="M8 5.5v13l11-6.5z" />
+  </svg>
+);
