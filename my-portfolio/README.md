@@ -1,69 +1,38 @@
-# React + TypeScript + Vite
+# jsebastianv.com
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Personal site of Juan Vargas T.: a single-page portfolio with hero, experience, selected projects, published Python packages, writing, photos and contact.
 
-Currently, two official plugins are available:
+Built with React 19, TypeScript and Vite. No runtime data fetching: everything on the page comes from the typed data files in `src/data/`, so the site can be updated by editing those files alone.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Structure
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```
+src/
+  data/
+    profile.ts        name, title, abstract, keywords, skills
+    experience.ts     industry roles, research work, education
+    projects.ts       selected projects grouped by theme, with links
+    packages.ts       published Python packages
+    publications.ts   articles and technical reports
+  components/         nav, hero, collapsible sections, story, experience, projects, books, footer
+  styles/global.css   design tokens (light only), layout, components
+  assets/
+    me/               profile.png is the hero portrait, a cutout with transparent background (replace it to update the photo)
+    story/            photos used in the story and experience sections
+    books/            book covers
+    companies/        organisation logos (file name = logo key)
+    collage/          gallery images
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Logos are matched to experience entries by key: `uts_logo.png` is referenced as `logoKeys: ['uts']`. Images dropped into `assets/collage/` appear in the gallery automatically.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Palette
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+| Token | Hex | Use |
+|---|---|---|
+| ink | `#0a0908` | text, dark cards, CTA band |
+| slate | `#22333b` | primary buttons, gradients |
+| paper | `#eae0d5` | soft tints and chips |
+| tan | `#c6ac8f` | accents, bullets, hero glow |
+| umber | `#5e503f` | muted text |
+

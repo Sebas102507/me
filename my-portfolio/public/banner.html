@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1584" />
+    <title>LinkedIn banner · Juan Vargas</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        background: #fff;
+        font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', system-ui, 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+      .banner {
+        position: relative;
+        width: 1584px;
+        height: 396px;
+        overflow: hidden;
+        background: #fff;
+        color: #222;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 88px 0 470px;
+        box-sizing: border-box;
+      }
+      .ghost {
+        position: absolute;
+        left: 40px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 360px;
+        font-weight: 600;
+        letter-spacing: -0.05em;
+        color: #f0f0f0;
+        line-height: 1;
+        white-space: nowrap;
+        user-select: none;
+        z-index: 0;
+      }
+      .left {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        gap: 16px;
+        max-width: 760px;
+      }
+      .kicker {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 18px;
+        font-weight: 500;
+        color: #7a7a7a;
+      }
+      .kicker i {
+        width: 9px;
+        height: 9px;
+        border-radius: 50%;
+        background: #222;
+        display: inline-block;
+      }
+      h1 {
+        margin: 0;
+        font-size: 84px;
+        font-weight: 500;
+        letter-spacing: -0.045em;
+        line-height: 0.98;
+      }
+      h1 b {
+        font-weight: 700;
+      }
+      p {
+        margin: 0;
+        font-size: 19px;
+        line-height: 1.4;
+        color: #7a7a7a;
+        max-width: 740px;
+      }
+      ul {
+        margin: 4px 0 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        gap: 10px;
+      }
+      li {
+        padding: 9px 16px;
+        border-radius: 999px;
+        background: #f5f5f5;
+        font-size: 17px;
+        font-weight: 500;
+      }
+      .right {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        justify-items: end;
+        gap: 10px;
+        text-align: right;
+      }
+      .url {
+        font-size: 26px;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+        padding: 14px 26px;
+        border-radius: 999px;
+        background: #222;
+        color: #fff;
+      }
+      .name {
+        font-size: 20px;
+        color: #7a7a7a;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="banner">
+      <span class="ghost">ENGINEER</span>
+      <div class="left">
+        <span class="kicker"><i></i> Data &amp; AI · Sydney</span>
+        <h1><b>Value</b> is what matters in life.</h1>
+        <ul>
+          <li>Data Engineer</li>
+          <li>Machine Learning</li>
+          <li>Generative AI</li>
+          <li>Business Value</li>
+        </ul>
+      </div>
+      <div class="right">
+        <span class="url">jsebastianv.com</span>
+      </div>
+    </div>
+  </body>
+</html>
